@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import br.com.catho.model.Classificador;
 import br.com.catho.model.Nota;
+import br.com.catho.model.TipoPerfil;
 import br.com.catho.model.customer.Nike;
 import br.com.catho.model.customer.abs.Customer;
 import br.com.catho.model.produto.Classic;
@@ -30,8 +31,7 @@ public class NikeServiceTest {
 		customer.add(new Classic());
 		customer.add(new Standout());
 		customer.add(new Premium());
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
-		assertEquals(3,nota.getProdutos().size());
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.NIKE);
 		assertEquals(resultado,nota.getTotal());	
 	}
 	
@@ -44,7 +44,7 @@ public class NikeServiceTest {
 		customer.add(new Premium());
 		customer.add(new Premium());
 		customer.add(new Premium());
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.NIKE);
 		assertEquals(6,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());	
 	}
@@ -65,7 +65,7 @@ public class NikeServiceTest {
 		customer.add(new Premium());
 		customer.add(new Premium());
 		customer.add(new Premium());
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.NIKE);
 		assertEquals(13,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());	
 	}

@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import br.com.catho.model.Classificador;
 import br.com.catho.model.Nota;
+import br.com.catho.model.TipoPerfil;
 import br.com.catho.model.customer.Ford;
 import br.com.catho.model.customer.abs.Customer;
 import br.com.catho.model.produto.Classic;
@@ -29,7 +30,7 @@ public class FordServiceTest {
 		resultado = 664.98;
 		customer.add(new Classic());
 		customer.add(new Premium());
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.FORD);
 		assertEquals(2,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());	
 	}
@@ -41,7 +42,7 @@ public class FordServiceTest {
 		customer.add(new Classic());
 		customer.add(new Classic());
 		customer.add(new Classic());
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.FORD);
 		assertEquals(5,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());	
 	}
@@ -62,7 +63,7 @@ public class FordServiceTest {
 		customer.add(new Classic());
 		customer.add(new Classic());
 		customer.add(new Classic());
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.FORD);
 		assertEquals(16,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());	
 	}
@@ -73,7 +74,7 @@ public class FordServiceTest {
 		customer.add(new Classic());
 		customer.add(new Standout());
 		customer.add(new Premium());
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.FORD);
 		assertEquals(3,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());	
 	}
@@ -88,7 +89,7 @@ public class FordServiceTest {
 		customer.add(new Standout());
 		customer.add(new Standout());
 		customer.add(new Premium());
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.FORD );
 		assertEquals(7,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());	
 	}
@@ -100,7 +101,7 @@ public class FordServiceTest {
 		customer.add(new Premium());
 		customer.add(new Premium());
 		customer.add(new Premium());
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.FORD );
 		assertEquals(4,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());	
 	}
@@ -113,7 +114,7 @@ public class FordServiceTest {
 		customer.add(new Premium());
 		customer.add(new Premium());
 		customer.add(new Premium());
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.FORD);
 		assertEquals(5,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());	
 	}
@@ -128,7 +129,7 @@ public class FordServiceTest {
 		customer.add(new Premium());
 		customer.add(new Premium());
 		customer.add(new Premium());
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.FORD);
 		assertEquals(8,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());	
 	}
@@ -144,7 +145,7 @@ public class FordServiceTest {
 		customer.add(new Premium());
 		customer.add(new Premium());
 		customer.add(new Premium());
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.FORD);
 		assertEquals(9,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());	
 	}

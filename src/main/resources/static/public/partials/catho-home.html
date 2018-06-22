@@ -1,0 +1,112 @@
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+				aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+	</div>
+</nav>
+
+<div class="container">
+
+	<div class="row">
+		<h3>Pedido </h3>
+		<div class="col-md-3">
+			<form class="form" ng-submit="save()">
+
+				<div class="row">
+					<div class="col-md-6">
+						<label for="perfil" class="">Perfil</label><br> 
+							
+						<div class="radio">
+						  <label>
+						    <input type="radio" ng-model="pedido.perfil" name="pedido.perfil" id="optionsRadios1" value="1">
+						    Default
+						  </label>
+						</div>
+						<div class="radio">
+						  <label>
+						    <input type="radio" ng-model="pedido.perfil" name="pedido.perfil" id="optionsRadios2" value="2">
+							Unilever
+						  </label>
+						</div>
+						<div class="radio">
+						  <label>
+						    <input type="radio" ng-model="pedido.perfil" name="pedido.perfil" id="optionsRadios3" value="3" >
+						    Nike
+						  </label>
+						</div>
+						
+						<div class="radio">
+						  <label>
+						    <input type="radio" ng-model="pedido.perfil" name="pedido.perfil" id="optionsRadios4" value="4">
+							Apple
+						  </label>
+						</div>
+					
+						<div class="radio">
+						  <label>
+						    <input type="radio" ng-model="pedido.perfil" name="pedido.perfil" id="optionsRadios5" value="5">
+							Ford
+						  </label>
+						</div>
+					</div>
+					
+					<div class="col-md-6">
+						<label for="classic" class="">Classic</label> 
+						<input ng-model="pedido.classic" type="number" name="classic" class="form-control">
+				
+						<label for="classic" class="">Standout</label> 
+						<input ng-model="pedido.standout" type="number" name="standout" class="form-control">
+				
+						<label for="classic" class="">Premium</label> 
+						<input ng-model="pedido.premium" type="number" name="premium" class="form-control">
+					</div>
+				</div>			
+				
+			
+				<div class="row">
+					<button type="submit" class="btn btn-primary" ng-disabled="formulario.$invalid">Realizar Pedido</button>
+				</div>		
+				
+					
+			</form>
+		</div>
+		
+		<div class="col-md-9">
+		
+			<h3>Historico de Pedidos</h3>
+
+			<table class="table  table-striped">
+			<tr>
+				<td class="">Perfil</td>
+				<td class="">Classic</td>
+				<td class="">Standout</td>
+				<td class="">Premium</td>
+				<td class="">Total</td>
+			</tr>
+		
+			<tr ng-repeat="nota in notas | filter : filterName">
+				<td>{{nota.perfil}}</td>
+				<td>{{nota.classicTotal}}</td>
+				<td>{{nota.standoutTotal}}</td>
+				<td>{{nota.premiumTotal}}</td>
+				<td>{{nota.total}}</td>
+			</tr>
+		</table>
+	</div>
+		
+		</div>
+		
+	</div>
+
+
+	<div class="row">
+		
+</div>

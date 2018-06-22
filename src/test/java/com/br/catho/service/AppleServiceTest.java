@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import br.com.catho.model.Classificador;
 import br.com.catho.model.Nota;
+import br.com.catho.model.TipoPerfil;
 import br.com.catho.model.customer.Apple;
 import br.com.catho.model.customer.abs.Customer;
 import br.com.catho.model.produto.Classic;
@@ -29,7 +30,7 @@ public class AppleServiceTest {
 		resultado = 664.98;
 		customer.add(new Classic());
 		customer.add(new Premium());
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.APPLE);
 		assertEquals(2,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());	
 	}
@@ -41,7 +42,7 @@ public class AppleServiceTest {
 		customer.add(new Premium());
 		customer.add(new Standout());
 		
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.APPLE);
 		assertEquals(3,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());	
 	}
@@ -63,9 +64,8 @@ public class AppleServiceTest {
 		customer.add(new Premium());
 		customer.add(new Premium());
 
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.APPLE);
 		assertEquals(13,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());	
 	}
-
 }

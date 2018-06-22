@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import br.com.catho.model.Classificador;
 import br.com.catho.model.Nota;
+import br.com.catho.model.TipoPerfil;
 import br.com.catho.model.customer.Unilever;
 import br.com.catho.model.customer.abs.Customer;
 import br.com.catho.model.produto.Classic;
@@ -37,7 +38,7 @@ public class UnileverServiceTest {
 		customer.add(new Classic());
 		customer.add(new Classic());
 		
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.UNILEVER );
 		assertEquals(3,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());
 	}
@@ -50,7 +51,7 @@ public class UnileverServiceTest {
 		customer.add(new Classic());
 		customer.add(new Classic());
 		
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.UNILEVER);
 		assertEquals(6,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());
 	}
@@ -65,7 +66,7 @@ public class UnileverServiceTest {
 		customer.add(new Standout());
 		customer.add(new Premium());
 		
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.UNILEVER);
 		assertEquals(7,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());
 	}
@@ -79,7 +80,7 @@ public class UnileverServiceTest {
 		customer.add(new Standout());
 		customer.add(new Premium());
 		
-		nota = customer.criaNota(new Classificador(customer.getProdutos()));
+		nota = customer.criaNota(new Classificador(customer.getProdutos()),TipoPerfil.UNILEVER);
 		assertEquals(5,nota.getProdutos().size());
 		assertEquals(resultado,nota.getTotal());
 	}

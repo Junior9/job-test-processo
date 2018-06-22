@@ -4,6 +4,7 @@ import java.util.List;
 
 import br.com.catho.model.Classificador;
 import br.com.catho.model.Nota;
+import br.com.catho.model.TipoPerfil;
 import br.com.catho.model.inter.Previlegio;
 import br.com.catho.model.inter.Produto;
 
@@ -27,11 +28,11 @@ public abstract class Customer implements Previlegio{
 		return totalSemDesconto();
 	}
 	
-	public Nota criaNota(Classificador classificador) {
+	public Nota criaNota(Classificador classificador,TipoPerfil tipo) {
 		if(temPrivilegio(classificador)) {
-			return new Nota(desconto(classificador),produtosComBonus(classificador));
+			return new Nota(desconto(classificador),produtosComBonus(classificador),classificador.getListClassic().size(),classificador.getListStandout().size(),classificador.getListPremium().size(),tipo.toString());
 		}
-		return new Nota(totalSemDesconto(),classificador.getProdutos());
+		return new Nota(totalSemDesconto(),classificador.getProdutos(),classificador.getListClassic().size(),classificador.getListStandout().size(),classificador.getListPremium().size(),tipo.toString());
 	}
 	
 	public Double totalSemDesconto() {
