@@ -7,6 +7,7 @@ public class Pedido {
 	private int standout;
 	private int premium;
 	
+	public Pedido() {}
 	public Pedido(int classic,int standout,int premium,int perfil){
 		this.classic = classic;
 		this.standout = standout;
