@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.catho.model.Nota;
 import br.com.catho.model.Pedido;
+import br.com.catho.model.dto.NotaDTO;
 import br.com.catho.service.PedidoService;
 
 @RestController
@@ -17,7 +17,7 @@ public class PedidoController {
 	PedidoService pedidoService;
 
 	@PostMapping(value="/pedido/nota",consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public Nota save(@RequestBody Pedido pedido) {
+	public NotaDTO save(@RequestBody Pedido pedido) {
 		return pedidoService.criaNota(pedido);
 	}
 }

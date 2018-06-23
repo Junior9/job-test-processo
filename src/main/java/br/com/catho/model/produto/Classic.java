@@ -1,12 +1,14 @@
 package br.com.catho.model.produto;
 
-import br.com.catho.model.TipoProduto;
 import br.com.catho.model.inter.Produto;
+import br.com.catho.model.util.TipoProduto;
 
 public class Classic implements Produto {
+	
+	private final Double VALOR = 269.99;
 
 	public Double getValor() {
-		return 269.99;
+		return VALOR;
 	}
 
 	@Override

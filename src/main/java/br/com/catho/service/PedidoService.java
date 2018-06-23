@@ -2,43 +2,41 @@ package br.com.catho.service;
 
 import org.springframework.stereotype.Service;
 
-import br.com.catho.model.Classificador;
-import br.com.catho.model.Nota;
 import br.com.catho.model.Pedido;
-import br.com.catho.model.TipoPerfil;
 import br.com.catho.model.customer.Apple;
 import br.com.catho.model.customer.Default;
 import br.com.catho.model.customer.Ford;
 import br.com.catho.model.customer.Nike;
 import br.com.catho.model.customer.Unilever;
 import br.com.catho.model.customer.abs.Customer;
+import br.com.catho.model.dto.NotaDTO;
 import br.com.catho.model.produto.Classic;
 import br.com.catho.model.produto.Premium;
 import br.com.catho.model.produto.Standout;
+import br.com.catho.model.util.Classificador;
+import br.com.catho.model.util.TipoPerfil;
 
 @Service
 public class PedidoService {
 
-	public Nota criaNota(Pedido pedido) {
-		
-		Customer customer = getPerfil(getP(pedido.getPerfil()));
-		
-		for(int x=0;x<pedido.getClassic();x++) {
+	public NotaDTO criaNota(Pedido pedido) {
+		int index = 0;
+		Customer customer = getPerfil(convertePerfil(pedido.getPerfil()));
+
+		for(index=0;index<pedido.getClassic();index++) {
 			customer.add(new Classic());
 		}
-		
-		for(int x=0;x<pedido.getStandout();x++) {
+		for(index=0;index<pedido.getStandout();index++) {
 			customer.add(new Standout());
 		}
-		
-		for(int x=0;x<pedido.getPremium();x++) {
+		for(index=0;index<pedido.getPremium();index++) {
 			customer.add(new Premium());
 		}
-		return customer.criaNota(new Classificador(customer.getProdutos()),getP(pedido.getPerfil()));
+		return customer.criaNota(new Classificador(customer.getProdutos()),convertePerfil(pedido.getPerfil()));
 	}
 
 
-	private TipoPerfil getP(int perfil) {
+	private TipoPerfil convertePerfil(int perfil) {
 		
 		TipoPerfil tipo = null;
 		switch (perfil) {
@@ -97,7 +95,4 @@ public class PedidoService {
 		}
 		return customer;
 	}
-	
-	
-	
 }

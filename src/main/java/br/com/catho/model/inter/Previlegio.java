@@ -2,7 +2,7 @@ package br.com.catho.model.inter;
 
 import java.util.List;
 
-import br.com.catho.model.Classificador;
+import br.com.catho.model.util.Classificador;
 
 public interface Previlegio {
 

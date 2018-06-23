@@ -3,13 +3,14 @@ package br.com.catho.model.customer;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.catho.model.Classificador;
 import br.com.catho.model.customer.abs.Customer;
 import br.com.catho.model.inter.Produto;
+import br.com.catho.model.util.Classificador;
 
 public class Apple extends Customer {
 	
-	private final int porcentagemDescontoClassic = 23;
+	private final int porcentagemDescontoStandout = 23;
+	private final int BONUSCLASSIC = 0;
 
 	public Apple(){
 		this.produtos = new ArrayList<Produto>();
@@ -17,7 +18,7 @@ public class Apple extends Customer {
 	
 	@Override
 	public Boolean temPrivilegio(Classificador classificador) {
-		return classificador.getListStandout().size() > 0;
+		return classificador.getListStandout().size() > BONUSCLASSIC;
 	}
 
 	@Override
@@ -25,8 +26,7 @@ public class Apple extends Customer {
 		Double totalClassic = classificador.somaSemDesconto(classificador.getListClassic());
 		Double totalStandout = classificador.somaSemDesconto(classificador.getListStandout());
 		Double totalPremium = classificador.somaSemDesconto(classificador.getListPremium());
-		
-		Double totalFinalDesconto = totalStandout - (porcentagemDescontoClassic * classificador.getListStandout().size());
+		Double totalFinalDesconto = totalStandout - (porcentagemDescontoStandout * classificador.getListStandout().size());
 		return totalClassic + totalFinalDesconto + totalPremium;
 	}
 

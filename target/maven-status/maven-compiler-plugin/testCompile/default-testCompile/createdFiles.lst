@@ -1,5 +1,6 @@
-com\br\catho\service\FordServiceTest.class
-com\br\catho\service\NikeServiceTest.class
-com\br\catho\service\AppleServiceTest.class
-com\br\catho\service\UnileverServiceTest.class
-com\br\catho\service\DefaultServiceTest.class
+com\br\catho\model\DefaultTest.class
+com\br\catho\model\FordTest.class
+com\br\catho\service\PedidoServiceTest.class
+com\br\catho\model\NikeTest.class
+com\br\catho\model\AppleTest.class
+com\br\catho\model\UnileverTest.class

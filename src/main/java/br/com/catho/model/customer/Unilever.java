@@ -3,10 +3,10 @@ package br.com.catho.model.customer;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.catho.model.Classificador;
 import br.com.catho.model.customer.abs.Customer;
 import br.com.catho.model.inter.Produto;
 import br.com.catho.model.produto.Classic;
+import br.com.catho.model.util.Classificador;
 
 public class Unilever extends Customer {
 	
